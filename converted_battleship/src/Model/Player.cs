@@ -43,7 +43,7 @@ public class Player : IEnumerable<Ship>
 	public Player(BattleShipsGame controller)
 	{
 		_game = controller;
-    _playerGrid = new SeaGrid(_Ships);
+   		_playerGrid = new SeaGrid(_Ships);
 
 		//for each ship add the ships name so the seagrid knows about them
 		foreach (ShipName name in Enum.GetValues(typeof(ShipName))) {
@@ -102,7 +102,7 @@ public class Player : IEnumerable<Ship>
 	/// <value>shots taken</value>
 	/// <returns>teh number of shots taken</returns>
 	public int Shots {
-		get { return _shots; }
+        get { return _shots; }
 	}
 
 	public int Hits {
@@ -178,18 +178,21 @@ public class Player : IEnumerable<Ship>
 	/// <param name="col">the column to attack</param>
 	/// <returns>the result of the attack</returns>
 	internal AttackResult Shoot(int row, int col)
-	{
-		_shots += 1;
+	{   
 		AttackResult result = default(AttackResult);
 		result = EnemyGrid.HitTile(row, col);
 
 		switch (result.Value) {
 			case ResultOfAttack.Destroyed:
+                _shots += 1;
+                break;
 			case ResultOfAttack.Hit:
 				_hits += 1;
+                _shots += 1;
 				break;
 			case ResultOfAttack.Miss:
 				_misses += 1;
+                _shots += 1;
 				break;
 		}
 

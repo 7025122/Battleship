@@ -1,5 +1,6 @@
 
 using Microsoft.VisualBasic;
+using SwinGameSDK;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ public class BattleShipsGame
 			newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
 		}
 
-		if (AttackCompleted != null) {
+        if (AttackCompleted != null) {
 			AttackCompleted(this, newAttack);
 		}
 
@@ -101,10 +102,3 @@ public class BattleShipsGame
 		return newAttack;
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

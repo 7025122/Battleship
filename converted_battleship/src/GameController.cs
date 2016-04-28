@@ -222,8 +222,9 @@ public static class GameController
 	{
 		AttackResult result = default(AttackResult);
 		result = _theGame.Shoot(row, col);
-		CheckAttackResult(result);
-	}
+		CheckAttackResult(result);     
+
+    }
 
 	/// <summary>
 	/// Gets the AI to attack.
@@ -377,10 +378,3 @@ public static class GameController
 	}
 
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

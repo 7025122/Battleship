@@ -66,15 +66,29 @@ public class Ship
 		get { return _row; }
 	}
 
+    /// <summary>
+    /// The column location of the ship
+    /// </summary>
+    /// <value>The top column location of the ship</value>
+    /// <returns>the column of the ship</returns>
 	public int Column {
 		get { return _col; }
 	}
 
-	public Direction Direction {
+    /// <summary>
+    /// The direction of the ship
+    /// </summary>
+    /// <value>the default direction of the ship</value>
+    /// <returns>the direction of the ship</returns>
+    public Direction Direction {
 		get { return _direction; }
 	}
 
-	public Ship(ShipName ship)
+    /// <summary>
+    /// Ship with a name, tile location and size of the ship
+    /// </summary>
+    /// <param name="ship">name of the ship</param>
+    public Ship(ShipName ship)
 	{
 		_shipName = ship;
 		_tiles = new List<Tile>();
@@ -103,7 +117,10 @@ public class Ship
 		_tiles.Clear();
 	}
 
-	public void Hit()
+    /// <summary>
+    /// Hits ship has taken
+    /// </summary>
+    public void Hit()
 	{
 		_hitsTaken = _hitsTaken + 1;
 	}
@@ -116,7 +133,10 @@ public class Ship
 		get { return _tiles.Count > 0; }
 	}
 
-	public bool IsDestroyed {
+    /// <summary>
+    ///Is ship destroyed
+    /// </summary>
+    public bool IsDestroyed {
 		get { return Hits == Size; }
 	}
 

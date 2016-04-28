@@ -13,12 +13,11 @@ using SwinGameSDK;
 /// </summary>
 public abstract class AIPlayer : Player
 {
-
-	/// <summary>
-	/// Location can store the location of the last hit made by an
-	/// AI Player. The use of which determines the difficulty.
-	/// </summary>
-	protected class Location
+    /// <summary>
+    /// Location can store the location of the last hit made by an
+    /// AI Player. The use of which determines the difficulty.
+    /// </summary>
+    protected class Location
 	{
 		private int _Row;
 
@@ -54,41 +53,61 @@ public abstract class AIPlayer : Player
 			_Row = row;
 		}
 
-		/// <summary>
-		/// Check if two locations are equal
-		/// </summary>
-		/// <param name="this">location 1</param>
-		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are at the same spot</returns>
-		public static bool operator ==(Location @this, Location other)
+        /// <summary>
+        /// Fix overide error
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+        /// <summary>
+        /// Check if two locations are equal
+        /// </summary>
+        /// <param name="this">location 1</param>
+        /// <param name="other">location 2</param>
+        /// <returns>true if location 1 and location 2 are at the same spot</returns>
+        public static bool operator == (Location @this, Location other)
 		{
 			return !ReferenceEquals(@this, null) && !ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;
 			//return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
 		}
 
-		/// <summary>
-		/// Check if two locations are not equal
-		/// </summary>
-		/// <param name="this">location 1</param>
-		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are not at the same spot</returns>
-		public static bool operator !=(Location @this, Location other)
+        /// <summary>
+        /// Fix overide error
+        /// </summary>
+        /// <returns></returns>
+        public override bool Equals(object o)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// Check if two locations are not equal
+        /// </summary>
+        /// <param name="this">location 1</param>
+        /// <param name="other">location 2</param>
+        /// <returns>true if location 1 and location 2 are not at the same spot</returns>
+        public static bool operator !=(Location @this, Location other)
 		{
 			return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
 		}
 	}
 
-
-	public AIPlayer(BattleShipsGame game) : base(game)
+    /// <summary>
+    /// Creates AIPlayer
+    /// </summary>
+    public AIPlayer(BattleShipsGame game) : base(game)
 	{
 	}
 
-	/// <summary>
-	/// Generate a valid row, column to shoot at
-	/// </summary>
-	/// <param name="row">output the row for the next shot</param>
-	/// <param name="column">output the column for the next show</param>
-	protected abstract void GenerateCoords(ref int row, ref int column);
+    /// <summary>
+    /// Generate a valid row, column to shoot at
+    /// </summary>
+    /// <param name="row">output the row for the next shot</param>
+    /// <param name="column">output the column for the next show</param>
+    protected abstract void GenerateCoords(ref int row, ref int column);
 
 	/// <summary>
 	/// The last shot had the following result. Child classes can use this

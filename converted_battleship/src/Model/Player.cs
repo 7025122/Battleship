@@ -11,13 +11,18 @@ using System.Diagnostics;
 /// </summary>
 public class Player : IEnumerable<Ship>
 {
-
+    /// <summary>
+    /// Initalizes a new random class using default seed
+    /// </summary>
 	protected static Random _Random = new Random();
 	private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
 	private SeaGrid _playerGrid;
 	private ISeaGrid _enemyGrid;
 
-	protected BattleShipsGame _game;
+    /// <summary>
+    /// creates a new battleship game 
+    /// </summary>
+    protected BattleShipsGame _game;
 	private int _shots;
 	private int _hits;
 
@@ -40,7 +45,10 @@ public class Player : IEnumerable<Ship>
 		set { _enemyGrid = value; }
 	}
 
-	public Player(BattleShipsGame controller)
+    /// <summary>
+    /// main controller for the player
+    /// </summary>
+    public Player(BattleShipsGame controller)
 	{
 		_game = controller;
    		_playerGrid = new SeaGrid(_Ships);
@@ -77,7 +85,10 @@ public class Player : IEnumerable<Ship>
 		get { return _playerGrid.AllDeployed; }
 	}
 
-	public bool IsDestroyed {
+    /// <summary>
+    /// checks if ships are destroyed
+    /// </summary>
+    public bool IsDestroyed {
 //Check if all ships are destroyed... -1 for the none ship
 		get { return _playerGrid.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1; }
 	}
@@ -105,7 +116,10 @@ public class Player : IEnumerable<Ship>
 		get { return _shots; }
 	}
 
-	public int Hits {
+    /// <summary>
+    /// battleship hits
+    /// </summary>
+    public int Hits {
 		get { return _hits; }
 	}
 
@@ -118,7 +132,10 @@ public class Player : IEnumerable<Ship>
 		get { return _misses; }
 	}
 
-	public int Score {
+    /// <summary>
+    /// Players score results
+    /// </summary>
+    public int Score {
 		get {
 			if (IsDestroyed) {
 				return 0;
@@ -199,7 +216,10 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
-	public virtual void RandomizeDeployment()
+    /// <summary>
+    /// randomizes deployment of ships
+    /// </summary>
+    public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;
 		Direction heading = default(Direction);

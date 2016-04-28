@@ -5,7 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
-
+/// <summary>
+/// Static class for all game resources
+/// Fonts, Backgrounds, Ships, Explosions,
+/// Sounds, Music etc
+/// </summary>
 public static class GameResources
 {
 
@@ -292,6 +296,9 @@ public static class GameResources
 		}
 	}
 
+    /// <summary>
+    /// frees all resources
+    /// </summary>
 	public static void FreeResources()
 	{
 		FreeFonts();

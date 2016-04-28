@@ -12,9 +12,14 @@ using System.Diagnostics;
 public interface ISeaGrid
 {
 
-
+    /// <summary>
+    /// Sea grid width length
+    /// </summary>
 	int Width { get; }
 
+    /// <summary>
+    /// Sea grid height length
+    /// </summary>
 	int Height { get; }
 	/// <summary>
 	/// Indicates that the grid has changed.
@@ -25,7 +30,7 @@ public interface ISeaGrid
 	/// Provides access to the given row/column
 	/// </summary>
 	/// <param name="row">the row to access</param>
-	/// <param name="column">the column to access</param>
+	/// <param name="col">the column to access</param>
 	/// <value>what the player can see at that location</value>
 	/// <returns>what the player can see at that location</returns>
 

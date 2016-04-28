@@ -1,0 +1,2 @@
+C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\converted_battleship\bin\Debug\BattleShips.exe.config
+C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\converted_battleship\bin\Debug\BattleShips.xml

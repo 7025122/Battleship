@@ -33,6 +33,15 @@ static class DiscoveryController
         if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 			DoAttack();
 		}
+
+		if (SwinGame.KeyTyped(KeyCode.vk_c))
+		{
+			for (int i = 0; i < 1000; i++)
+			{
+				EndingGameController.DrawEndOfGame();
+				SwinGame.RefreshScreen();
+			}
+		}
 	}
 
 	/// <summary>

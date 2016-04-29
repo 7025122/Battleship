@@ -60,3 +60,7 @@ C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\conver
 C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\converted_battleship\obj\x86\Debug-Mac\BattleShips.csprojResolveAssemblyReference.cache
 C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\converted_battleship\obj\x86\Debug-Mac\BattleShips.exe
 C:\Users\Ron\Dropbox\University Subjects\Development Project 1\Battleship\converted_battleship\obj\x86\Debug-Mac\BattleShips.pdb
+C:\Users\7025122\Desktop\Battleship\converted_battleship\bin\Debug\BattleShips.exe.config
+C:\Users\7025122\Desktop\Battleship\converted_battleship\bin\Debug\BattleShips.xml
+C:\Users\7025122\Desktop\Battleship\converted_battleship\obj\x86\Debug-Mac\BattleShips.exe
+C:\Users\7025122\Desktop\Battleship\converted_battleship\obj\x86\Debug-Mac\BattleShips.pdb

@@ -108,7 +108,9 @@ public static class GameResources
 		return _Music[music];
 	}
 
-	private static Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
+
+
+    private static Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
 	private static Dictionary<string, Font> _Fonts = new Dictionary<string, Font>();
 	private static Dictionary<string, SoundEffect> _Sounds = new Dictionary<string, SoundEffect>();
 
@@ -119,7 +121,7 @@ public static class GameResources
 	private static Bitmap _LoaderEmpty;
 	private static Font _LoadingFont;
 
-	private static SoundEffect _StartSound;
+    private static SoundEffect _StartSound;
 	/// <summary>
 	/// The Resources Class stores all of the Games Media Resources, such as Images, Fonts
 	/// Sounds, Music.

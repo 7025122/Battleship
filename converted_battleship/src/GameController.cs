@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
+using System.Timers;
 
 /// <summary>
 /// The GameController is responsible for controlling the game,
@@ -16,8 +17,8 @@ public static class GameController
 
 	private static BattleShipsGame _theGame;
 	private static Player _human;
-
-	private static AIPlayer _ai;
+    public static SwinGameSDK.Timer timer = new SwinGameSDK.Timer();
+    private static AIPlayer _ai;
 
 	private static Stack<GameState> _state = new Stack<GameState>();
 
@@ -54,9 +55,9 @@ public static class GameController
 	{
 		//bottom state will be quitting. If player exits main menu then the game is over
 		_state.Push(GameState.Quitting);
-
-		//at the start the player is viewing the main menu
-		_state.Push(GameState.ViewingMainMenu);
+         
+        //at the start the player is viewing the main menu
+        _state.Push(GameState.ViewingMainMenu);
 	}
 
 	/// <summary>
@@ -67,7 +68,8 @@ public static class GameController
 	/// </remarks>
 	public static void StartGame()
 	{
-		if (_theGame != null)
+        timer.Start();
+        if (_theGame != null)
 			EndGame();
 
 		//Create the game
@@ -206,7 +208,7 @@ public static class GameController
 		//deploy the players
 		_theGame.AddDeployedPlayer(_human);
 		_theGame.AddDeployedPlayer(_ai);
-
+        timer.Start();
 		SwitchState(GameState.Discovering);
 	}
 

@@ -18,10 +18,19 @@ static class GameLogic
 
 		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
+        
+
 		//Game Loop
 		do {
+
 			GameController.HandleUserInput();
 			GameController.DrawScreen();
+            //if f10 key pressed the game enters full screen
+            if(SwinGame.KeyReleased(KeyCode.vk_F10))
+            {
+                SwinGame.ToggleFullScreen();
+            }
+            
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 		SwinGame.StopMusic();

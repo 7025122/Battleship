@@ -247,6 +247,8 @@ static class UtilityFunctions
 		}
 
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
+        SwinGame.DrawText("Timer: ", SwinGame.ColorGreen(), 550, 585);
+        SwinGame.DrawText(Convert.ToString(GameController.timer.Ticks), SwinGame.ColorGreen(), 600, 585);
 	}
 
 	public static void AddExplosion(int row, int col)

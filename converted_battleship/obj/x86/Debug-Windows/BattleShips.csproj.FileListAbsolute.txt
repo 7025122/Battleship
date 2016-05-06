@@ -113,4 +113,5 @@ C:\Users\100582605\Desktop\Battleship\converted_battleship\bin\Debug\Resources\S
 C:\Users\100582605\Desktop\Battleship\converted_battleship\bin\Debug\BattleShips.exe.config
 C:\Users\100582605\Desktop\Battleship\converted_battleship\bin\Debug\BattleShips.exe
 C:\Users\100582605\Desktop\Battleship\converted_battleship\bin\Debug\SwinGame.dll
+C:\Users\100582605\Desktop\Battleship\converted_battleship\obj\x86\Debug-Windows\BattleShips.csprojResolveAssemblyReference.cache
 C:\Users\100582605\Desktop\Battleship\converted_battleship\obj\x86\Debug-Windows\BattleShips.exe
